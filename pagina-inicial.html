@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>SpendWize</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Mada:wght@400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html"><img class="logo" src="spend-removebg-preview.png" alt=""></a>
+    </header>
+    <main class="main-content">
+        <section class="controls">
+            <div class="dropdown">
+                <label for="month"></label>
+                <select id="month">
+                    <option value="mes">Mês</option>
+                    <option value="jan">Janeiro</option>
+                    <option value="feb">Fevereiro</option>
+                    <option value="mar">Março</option>
+                    <option value="abr">Abril</option>
+                    <option value="mai">Maio</option>
+                    <option value="jun">Junho</option>
+                    <option value="jul">Julho</option>
+                    <option value="ago">Agosto</option>
+                    <option value="set">Setembro</option>
+                    <option value="out">Outubro</option>
+                    <option value="nov">Novembro</option>
+                    <option value="dez">Dezembro</option>
+                </select>
+            </div>
+            <div class="dropdown">
+                <label for="year"></label>
+                <select id="year">
+                    <option value="ano">Ano</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="finance-info">
+
+            <div class="info-block salary">
+                <div class="label-salary">
+                    <label for="salary">Salário</label>
+                    <div class="input-group">
+                        <span class="salary-value">R$ 0.00</span>
+                        <button class="btn btn-salary" id="show-salary-form-btn">+</button>
+                    </div>
+                    <!-- <button class="btn btn-salary" id="show-salary-form-btn">+</button> -->
+                </div>
+            </div>
+
+            <!-- Modal de Adicionar Salário -->
+            <div id="salary-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" id="close-salary-modal">&times;</span>
+                    <h3>Adicionar Salário</h3>
+                    <input type="number" id="salary-value" placeholder="Valor do Salário" step="0.01">
+                    <button class="btn" id="save-salary-btn">Salvar Salário</button>
+                </div>
+            </div>
+
+
+            <div class="total">
+                <div class="info-block ">
+                    <span>Total Despesas</span>
+                    <span id="total-despesas">R$ 0.00</span>
+                </div>
+
+                <div class="info-block">
+                    <span>Total a Pagar</span>
+                    <span id="total-a-pagar">R$ 0.00</span>
+                </div>
+
+                <div class="info-block saldo">
+                    <span>Saldo</span>
+                    <span id="saldo">R$ 0.00</span>
+                </div>
+            </div>
+
+            <div class="despesas">
+                <div class="info-block info-block-despesas">
+                    <h3>Despesas a Pagar</h3>
+                </div>
+
+                <ul id="expense-list"></ul>
+
+                <!-- Modal de Adicionar Despesa -->
+                <div id="expense-modal" class="modal">
+                    <div class="modal-content">
+                        <span id="close-expense-modal" class="close">&times;</span>
+                        <h2>Adicionar Despesa</h2>
+                        <input type="text" id="expense-desc" placeholder="Descrição" />
+                        <input type="number" id="expense-value" placeholder="Valor" />
+                        <button id="save-expense-btn" class="btn">Salvar Despesa</button>
+                        <h2>Lista de Despesas</h2>
+                        <ul id="expense-list-modal"></ul> <!-- Lista de despesas dentro do modal -->
+                    </div>
+                </div>
+
+                <button class="btn btn-edit-despesa" id="show-expense-form-btn">Adicionar Despesa</button>
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
